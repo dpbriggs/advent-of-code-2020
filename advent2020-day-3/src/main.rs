@@ -51,7 +51,6 @@ impl Hill {
 
     // Returns number of trees encountered
     fn move_toboggan(&mut self, down: usize, right: usize) -> Option<u32> {
-        // let mut trees_encountered = 0;
         self.curr_row += down;
         self.curr_col += right;
         if self.at_index(self.curr_row, self.curr_col)? == Tile::Tree {
@@ -59,13 +58,13 @@ impl Hill {
         } else {
             Some(0)
         }
-        // Some(trees_encountered)
     }
 
     fn reset_position(&mut self) {
         self.curr_col = 0;
         self.curr_row = 0;
     }
+
     fn run_slope(&mut self, down: usize, right: usize) -> u64 {
         let mut trees_encountered = 0;
         while let Some(tree) = self.move_toboggan(down, right) {

@@ -73,7 +73,7 @@ fn problem_2(input: &[Password]) {
 
 fn main() -> Result<(), Box<dyn Error>> {
     let input = open_input()?;
-    // problem_1(&input);
-    problem_2(&input);
+    problem_1(&input);
+    // problem_2(&input);
     Ok(())
 }
